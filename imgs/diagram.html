@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 970 500">
+    <!-- Background -->
+    <rect width="970" height="500" fill="#f5f5f5" rx="10" ry="10"/>
+    
+    <!-- Title -->
+    <text x="450" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">Crop Insurance Recommendation Platform</text>
+    
+    <!-- User / Farmer -->
+    <circle cx="70" cy="150" r="35" fill="#e6f7ff" stroke="#1890ff" stroke-width="2"/>
+    <text x="70" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Farmer</text>
+    
+    <!-- Flask App in Databricks -->
+    <rect x="200" y="100" width="180" height="100" rx="10" ry="10" fill="#F9F7F4" stroke="#FF3621" stroke-width="2"/>
+    <rect x="200" y="100" width="180" height="30" rx="10" ry="10" fill="#FF3621"/>
+    <text x="290" y="122" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#fff">Databricks App</text>
+    <text x="290" y="168" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Flask App</text>
+    <text x="290" y="188" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">User Input Processor</text>
+    
+    <!-- Databricks SQL Warehouse -->
+    <rect x="200" y="300" width="180" height="100" rx="10" ry="10" fill="#F9F7F4" stroke="#FF3621" stroke-width="2"/>
+    <rect x="200" y="300" width="180" height="30" rx="10" ry="10" fill="#FF3621"/>
+    <text x="290" y="322" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#fff">Databricks SQL</text>
+    <text x="290" y="348" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Serverless Warehouse</text>
+    <text x="290" y="368" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Historical Crop Data</text>
+    <text x="290" y="388" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Growing Conditions</text>
+    
+    <!-- Azure AI Foundry LLM -->
+    <rect x="550" y="200" width="180" height="100" rx="10" ry="10" fill="#fff" stroke="#1890ff" stroke-width="2"/>
+    <rect x="550" y="200" width="180" height="30" rx="10" ry="10" fill="#1890ff"/>
+    <text x="640" y="222" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#fff">Azure AI Foundry</text>
+    <text x="640" y="248" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">Fine-Tuned LLM</text>
+    <text x="640" y="268" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Insurance Policy Analysis</text>
+    <text x="640" y="288" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Recommendation Engine</text>
+    
+    <!-- Output / Recommendation -->
+    <path d="M770,250 L920,250 L920,150 L770,150 Z" fill="#f6ffed" stroke="#52c41a" stroke-width="2"/>
+    <text x="845" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Insurance</text>
+    <text x="845" y="195" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Policy</text>
+    <text x="845" y="215" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Recommendation</text>
+    
+    <!-- Connections/Arrows -->
+    <!-- User to Flask App -->
+    <path d="M105,150 L200,150" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <text x="152" y="140" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Planting Plans</text>
+    
+    <!-- Flask App to SQL Warehouse -->
+    <path d="M290,200 L290,300" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <text x="310" y="250" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Query</text>
+    
+    <!-- SQL Warehouse to Flask App -->
+    <path d="M250,300 L250,200" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <text x="230" y="250" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Results</text>
+    
+    <!-- Flask App to Azure AI Foundry -->
+    <path d="M380,150 L550,150 L480,250 L550,250" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <text x="480" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">User Input +</text>
+    <text x="480" y="190" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Historical Data</text>
+    
+    <!-- Azure AI Foundry to Output -->
+    <path d="M730,250 L770,250" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    
+    <!-- Return path to User -->
+    <path d="M770,150 L740,150 L740,70 L70,70 L70,115" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,5"/>
+    <text x="405" y="60" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">Policy Recommendation Delivered to Farmer</text>
+    
+    <!-- Arrow Marker -->
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+      </marker>
+    </defs>
+    
+    <!-- Data Flow Legend -->
+    <rect x="40" y="440" width="20" height="2" fill="#333"/>
+    <text x="70" y="445" font-family="Arial, sans-serif" font-size="12" fill="#333">Data Flow</text>
+    
+    <rect x="140" y="440" width="20" height="2" fill="#333" stroke-dasharray="5,5"/>
+    <text x="190" y="445" font-family="Arial, sans-serif" font-size="12" fill="#333">Response Flow</text>
+  </svg>

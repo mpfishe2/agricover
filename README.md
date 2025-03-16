@@ -22,6 +22,8 @@ AgriCover uses advanced data analytics and machine learning to provide personali
 - **Frontend**: HTML, CSS, JavaScript
 - **Environment Management**: dotenv for configuration
 
+![Architecture](./imgs/agricover_flow.png)
+
 ## Setup and Installation
 
 ### Prerequisites
