@@ -6,6 +6,8 @@ AgriCover is an intelligent crop insurance recommendation system designed to hel
 
 AgriCover uses advanced data analytics and machine learning to provide personalized crop insurance recommendations. The system takes into account multiple factors such as crop type, location, field characteristics, farming practices, and historical yield data to assess risk and suggest optimal insurance coverage options.
 
+![Demo](./imgs/agricover_demo.gif)
+
 ## Features
 
 - **Personalized Risk Assessment**: Evaluates risk based on crop type, county, planting date, drainage conditions, tillage practices, and more
