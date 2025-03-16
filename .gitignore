@@ -1,0 +1,9 @@
+# created by virtualenv automatically
+/bin
+/lib
+/pyvenv.cfg
+.env
+dbsql_ex.py
+azureOpenAI_ex.py
+**__pycache__**
+.databricks

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriCover</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #2c5530;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 2rem;
+        }
+        .form-section, .results-section {
+            flex: 1;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+        input, textarea {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #2c5530;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1e3921;
+        }
+        .results-section {
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>AgriCover</h1>
+    </header>
+    
+    <main class="container">
+        <section class="form-section">
+            <h2>Crop Insurance Quote</h2>
+            <form method="POST" action="{{ url_for('process_form') }}">
+                <div class="form-group">
+                    <label for="crop_type">Crop Type:</label>
+                    <div>
+                        <input type="radio" id="corn" name="crop_type" value="corn" required>
+                        <label for="corn">Corn</label>
+                        <input type="radio" id="soybean" name="crop_type" value="soybean">
+                        <label for="soybean">Soybean</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="county">County:</label>
+                    <select id="county" name="county" required>
+                        <option value="">Select a county...</option>
+                        <option value="Champaign">Champaign</option>
+                        <option value="DeWitt">DeWitt</option>
+                        <option value="Piatt">Piatt</option>
+                        <option value="Macon">Macon</option>
+                        <option value="McLean">McLean</option>
+                        <option value="Vermilion">Vermilion</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Iroquois">Iroquois</option>
+                        <option value="Douglas">Douglas</option>
+                        <option value="Sangamon">Sangamon</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="field_size_acres">Field Size (acres):</label>
+                    <input type="number" id="field_size_acres" name="field_size_acres" min="1" max="10000" step="0.1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="planting_date">Planting Date:</label>
+                    <input type="date" id="planting_date" name="planting_date" min="2024-04-01" max="2024-06-29" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="drainage">Drainage:</label>
+                    <div>
+                        <input type="radio" id="poor" name="drainage" value="Poor" required>
+                        <label for="poor">Poor</label>
+                        <input type="radio" id="moderate" name="drainage" value="Moderate">
+                        <label for="moderate">Moderate</label>
+                        <input type="radio" id="good" name="drainage" value="Good">
+                        <label for="good">Good</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tile_drained">Tile Drained:</label>
+                    <div>
+                        <input type="radio" id="tile_yes" name="tile_drained" value="true" required>
+                        <label for="tile_yes">Yes</label>
+                        <input type="radio" id="tile_no" name="tile_drained" value="false">
+                        <label for="tile_no">No</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tillage">Tillage Type:</label>
+                    <div>
+                        <input type="radio" id="conventional" name="tillage" value="conventional" required>
+                        <label for="conventional">Conventional</label>
+                        <input type="radio" id="conservation" name="tillage" value="conservation">
+                        <label for="conservation">Conservation</label>
+                        <input type="radio" id="no_till" name="tillage" value="no-till">
+                        <label for="no_till">No-Till</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nitrogen_rate">Nitrogen Rate (lbs/acre):</label>
+                    <input type="number" id="nitrogen_rate" name="nitrogen_rate" min="0" max="300" step="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="previous_crop">Previous Crop:</label>
+                    <div>
+                        <input type="radio" id="prev_corn" name="previous_crop" value="corn" required>
+                        <label for="prev_corn">Corn</label>
+                        <input type="radio" id="prev_soybean" name="previous_crop" value="soybean">
+                        <label for="prev_soybean">Soybean</label>
+                        <input type="radio" id="prev_other" name="previous_crop" value="other">
+                        <label for="prev_other">Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="coverage_level">Coverage Level:</label>
+                    <select id="coverage_level" name="coverage_level" required>
+                        <option value="">Select coverage level...</option>
+                        <option value="0.50">50%</option>
+                        <option value="0.55">55%</option>
+                        <option value="0.60">60%</option>
+                        <option value="0.65">65%</option>
+                        <option value="0.70">70%</option>
+                        <option value="0.75">75%</option>
+                        <option value="0.80">80%</option>
+                        <option value="0.85">85%</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="unit_structure">Unit Structure:</label>
+                    <div>
+                        <input type="radio" id="enterprise" name="unit_structure" value="enterprise" required>
+                        <label for="enterprise">Enterprise</label>
+                        <input type="radio" id="optional" name="unit_structure" value="optional">
+                        <label for="optional">Optional</label>
+                    </div>
+                </div>
+
+                <button type="submit">Calculate Insurance Options</button>
+            </form>
+        </section>
+
+        <section class="results-section">
+            <h2>Results</h2>
+            {% if results %}
+                <div class="results-content">
+                    <h3>Insurance Recommendation</h3>
+                    <div class="risk-assessment">
+                        <h4>Risk Assessment</h4>
+                        <p>Risk Level: {{ results.risk_assessment.risk_level | title }}</p>
+                        <p>Key Factors:</p>
+                        <ul>
+                            {% for factor in results.risk_assessment.key_factors %}
+                                <li>{{ factor }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+        
+                    <div class="recommendation">
+                        <h4>Recommended Policy: {{ results.selected_policy }}</h4>
+                        <p>{{ results.recommendation_explanation }}</p>
+                        {% if results.policy_details %}
+                            <p>Coverage Level: {{ (results.policy_details.coverage_level * 100) | int }}%</p>
+                            <p>Premium Per Acre: ${{ results.policy_details.premium_per_acre }}/acre</p>
+                            <p>Total Premium: ${{ results.policy_details.total_premium }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                <p>No results to display yet. Please submit the form.</p>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

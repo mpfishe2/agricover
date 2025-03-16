@@ -1,0 +1,80 @@
+{
+    "corn": [
+        {
+            "policy_name": "Standard Yield Protection",
+            "coverage_level": 0.75,
+            "premium_per_acre": 22.50,
+            "key_features": [
+                "Protection against yield losses due to natural causes",
+                "No revenue protection",
+                "Lower premium cost"
+            ],
+            "suitable_for": "Low to moderate risk situations with stable yield history",
+            "risk_level": "low"
+        },
+        {
+            "policy_name": "Revenue Protection Plus",
+            "coverage_level": 0.80,
+            "premium_per_acre": 32.75,
+            "key_features": [
+                "Protection against both yield and price declines",
+                "Harvest price option included",
+                "Moderate deductible"
+            ],
+            "suitable_for": "Moderate risk situations or farms with significant operating loans",
+            "risk_level": "moderate"
+        },
+        {
+            "policy_name": "Premium Multi-Peril Coverage",
+            "coverage_level": 0.85,
+            "premium_per_acre": 42.50,
+            "key_features": [
+                "Maximum available coverage for both yield and price",
+                "Harvest price option included",
+                "Additional prevented planting protection",
+                "Supplemental coverage option eligible"
+            ],
+            "suitable_for": "High-value operations or high-risk areas with variable yield history",
+            "risk_level": "high"
+        }
+    ],
+    "soybean": [
+        {
+            "policy_name": "Basic Yield Coverage",
+            "coverage_level": 0.75,
+            "premium_per_acre": 18.25,
+            "key_features": [
+                "Basic protection against yield losses",
+                "No revenue component",
+                "Cost-effective option"
+            ],
+            "suitable_for": "Low risk operations with consistent yield history",
+            "risk_level": "low"
+        },
+        {
+            "policy_name": "Enhanced Revenue Protection",
+            "coverage_level": 0.80,
+            "premium_per_acre": 25.50,
+            "key_features": [
+                "Comprehensive protection against yield and price declines",
+                "Harvest price option included",
+                "Replant coverage"
+            ],
+            "suitable_for": "Operations with moderate yield variability or price concerns",
+            "risk_level": "moderate"
+        },
+        {
+            "policy_name": "Elite Multi-Peril Plan",
+            "coverage_level": 0.85,
+            "premium_per_acre": 36.75,
+            "key_features": [
+                "Maximum yield and revenue protection",
+                "Harvest price option included",
+                "Enhanced prevented planting coverage",
+                "Quality loss adjustments"
+            ],
+            "suitable_for": "High-risk areas or farms with significant variability in yields",
+            "risk_level": "high"
+        }
+    ]
+}

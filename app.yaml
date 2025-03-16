@@ -1,0 +1,15 @@
+command:
+  - gunicorn
+  - app:app
+  - -w
+  - 4
+
+env:
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: "sql_warehouse"
+  - name: DATABRICKS_PAT
+    valueFrom: "pat"
+  - name: AZURE_OPENAI_ENDPOINT
+    valueFrom: "azure_open_ai_endpoint"
+  - name: AZURE_OPENAI_ENDPOINT_KEY
+    valueFrom: "azure_open_ai_endpoint_key"

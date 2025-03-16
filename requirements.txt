@@ -1,0 +1,7 @@
+openai
+joblib
+pandas
+numpy
+python-dotenv
+Flask
+requests
