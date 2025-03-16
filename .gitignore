@@ -8,4 +8,5 @@ azureOpenAI_ex.py
 **__pycache__**
 .databricks
 .DS_Store
-imgs/agricover_flow.png
+imgs/diagram.html
+
